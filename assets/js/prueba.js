@@ -1,5 +1,7 @@
 //cargamos el select con las opciones de valor de la API
 document.addEventListener('DOMContentLoaded', ()=> select())
+//variable global que utilizaremos al renderizar de nuevo sin recargar la página
+let myChart
 //conexión con la API
 async function getCambioMoneda() {
     try{
@@ -72,7 +74,7 @@ async function renderResultado(){
     
     //Preparación del renderizado de la gráfica
     // metemos en un array las fechas y los valores
-        console.log(moneda)
+        
     let fechas = []
     let valores = []
 
@@ -81,10 +83,17 @@ async function renderResultado(){
         fechas.push(dia.fecha.slice(0, 10));
         valores.push(dia.valor);
     });
+
+    //hay un problema al cambiar de moneda o de valor a cambiar
+    //usamos una variable global, para destruir en el DOM la gráfica, cuando se pulse "buscar", para poder renderizar una nueva gráfica
+
+    if(myChart){
+        myChart.destroy()
+    }
      
      //configuramos el gráfico
      const canva = document.querySelector('.canvas')
-     new Chart(canva, {
+     myChart = new Chart(canva, {
         type: 'line',
         data: {
             labels:fechas,
