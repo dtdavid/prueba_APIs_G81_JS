@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    text-align: center;
+    background-color: #192024;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    width: 450px;
+    color: white;
+    border-top: 1px solid #004d5a;
+    border-bottom: 1px solid #004d5a;
+    padding: 3px 0px;
+    margin: 10px 0px;
+    text-align: center;
+}
+.inputs {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #68767e;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    border-radius: 3px;
+    width: 200px;
+}
+
+#moneda {
+    width: 60%;
+    height: 25px;
+    font-size: 0.6rem;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    padding-left: 10px;
+    text-align: center;
+}
+#moneda:focus {
+    outline: none;
+}
+.cambio {
+    font-size: 0.8rem;
+}
+
+#cambio {
+    width: 60%;
+    height: 25px;
+    font-size: 0.4rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+#cambio:focus {
+    outline: none;
+}
+.buscar {
+    width: 60%;
+    height: 25px;
+    background-color: #00cbf2;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    margin-top: 5px;
+    
+}
+.grafico {
+    margin: 10px;
+}
+.resultado {
+    font-size: 0.8rem;
+}
+.canvas {
+    width: 700px;
+    height: 400px;
+    background-color: white;
+}
